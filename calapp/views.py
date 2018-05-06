@@ -7,6 +7,9 @@ def index(request):
     entries = Entry.objects.all()
     return render(request, "calapp/index.html",{'entries':entries})
 
+def calendar(request):
+    return render(request, "calapp/calendar.html")
+
 def details(request):
     entry = Entry.objects.get(id)
     return render(request, "calapp/details.html",{'entry':entry})

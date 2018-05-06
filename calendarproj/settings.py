@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'calapp'
+    'calapp',
+    'schedule',
+    'djangobower',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -114,8 +117,16 @@ USE_L10N = True
 
 USE_TZ = True
 
+BOWER_COMPONENTS_ROOT = '/components'
 
+BOWER_INSTALLED_APPS = {
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+#STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
+
 
 STATIC_URL = '/static/'
